@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mylib_navigation"
+    app:startDestination="@id/itemBooksList">
+
+    <fragment
+        android:id="@+id/itemBooksList"
+        android:name="com.example.mylib_160420030.view.BooksListFragment"
+        android:label="fragment_books_list"
+        tools:layout="@layout/fragment_books_list" >
+        <action
+            android:id="@+id/actionBookDetails"
+            app:destination="@id/bookDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemGenresList"
+        android:name="com.example.mylib_160420030.view.GenresListFragment"
+        android:label="fragment_genres_list"
+        tools:layout="@layout/fragment_genres_list" />
+    <fragment
+        android:id="@+id/itemCreatorList"
+        android:name="com.example.mylib_160420030.view.LeaderboardAuthorsFragment"
+        android:label="fragment_leaderboard_authors"
+        tools:layout="@layout/fragment_leaderboard_authors" >
+        <action
+            android:id="@+id/actionAuthorDetails"
+            app:destination="@id/authorDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.example.mylib_160420030.view.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" >
+        <action
+            android:id="@+id/actionRentHistory"
+            app:destination="@id/rentHistoryFragment" />
+        <action
+            android:id="@+id/actionWishlist"
+            app:destination="@id/wishlistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailsFragment"
+        android:name="com.example.mylib_160420030.view.BookDetailsFragment"
+        android:label="fragment_book_details"
+        tools:layout="@layout/fragment_book_details" >
+        <argument android:name="idBook"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/rentHistoryFragment"
+        android:name="com.example.mylib_160420030.view.RentHistoryFragment"
+        android:label="RentHistoryFragment" />
+    <fragment
+        android:id="@+id/authorDetailsFragment"
+        android:name="com.example.mylib_160420030.view.AuthorDetailsFragment"
+        android:label="fragment_author_details"
+        tools:layout="@layout/fragment_author_details" >
+        <argument
+            android:name="authorId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="com.example.mylib_160420030.view.WishlistFragment"
+        android:label="fragment_wishlist"
+        tools:layout="@layout/fragment_wishlist" />
+</navigation>
